@@ -1,0 +1,25 @@
+.container {
+  color: #3f3f3f;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin: 10px 0;
+  h5 {
+    margin: 0;
+  }
+  .form-check {
+    margin: 5px;
+  }
+}
+
+button {
+  margin-top: 10px;
+  align-self: end;
+}
+
+.text-danger, .text-success {
+  font-weight: bolder;
+}
