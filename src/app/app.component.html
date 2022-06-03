@@ -1,5 +1,12 @@
+<div class="navbar navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand"> Тест на тему "Системы измерений количества и показателей качества нефти" </a>
+</div>
+
 <div class="container">
-  <h3> Я тест Сони Коротковой </h3>
+
+  <h3 *ngIf="isResult" [ngClass]="rightAnswersCounter > questions.length / 2 ? 'text-success' : 'text-danger'">
+    Всего дано правильных ответов: {{rightAnswersCounter}}
+  </h3>
 
   <div class="card" *ngFor="let item of questions; index as i">
 
@@ -29,6 +36,7 @@
         <div class="form-check" *ngFor="let v of item.vars; index as j">
           <input #check class="form-check-input"
                  type="checkbox" [id]="'check' + i + j"
+                 (change)="changeMultiUserRes(i, j, $event)"
                  [disabled]="isResult">
           <label class="form-check-label" [for]="'check' + i + j"
                  [ngClass]="labelClassMulti(v.right, check.checked)">
